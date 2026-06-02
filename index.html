@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eli Cintaku</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="1">
+    <div id="heartsLayer" class="hearts"></div>
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+    <main class="page">
+      <div class="container">
+        <div class="topNav">
+          <div class="badge" title="Elii">
+            <span class="heart" aria-hidden="true"></span>
+            Elii · 18 Mei 2026
+          </div>
+        </div>
+
+        <section class="hero">
+          <div class="card wide">
+            <h1>Tanggal Jadian</h1>
+            <p>
+              Eliii… aku nggak cuma inget tanggalnya. Aku inget rasanya: jantung
+              berdegup, tangan mencari, dan dunia terasa lebih lembut.
+            </p>
+            <div style="margin-top:14px">
+              <span class="badge"
+                ><span class="heart" aria-hidden="true"></span> 18 Mei 2026</span
+              >
+            </div>
+
+            <div class="hint">
+              <strong>Aturan kecil:</strong> ketik tanggal persis lalu klik
+              tombolnya. Biar aku yakin kamu juga mengingatnya dengan hati.
+            </div>
+          </div>
+
+          <div class="card narrow">
+            <h2>Konfirmasi dulu ya</h2>
+            <p style="margin-top:6px">
+              Isi: <strong>18 Mei 2026</strong>
+            </p>
+
+            <div id="dateWrap" style="margin-top:10px">
+              <input
+                id="dateInput"
+                class="input"
+                inputmode="text"
+                autocomplete="off"
+                placeholder="Contoh: 18 Mei 2026"
+              />
+            </div>
+
+            <div class="btnRow">
+              <button id="checkDateBtn" class="btn primary" type="button">
+                Iya, lanjut
+              </button>
+              <button
+                class="btn"
+                type="button"
+                onclick="document.getElementById('dateInput').value=''; spawnHearts(6);"
+              >
+                Ulangi dari awal
+              </button>
+            </div>
+
+            <div id="dateError" class="hint" style="display:none"></div>
+            <div
+              id="successBubble"
+              class="hint"
+              style="display:none"
+            ></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      // Small UX: if script writes messages, show the boxes.
+      (function () {
+        const input = document.getElementById("dateInput");
+        const err = document.getElementById("dateError");
+        const ok = document.getElementById("successBubble");
+        const btn = document.getElementById("checkDateBtn");
+
+        if (input) input.focus();
+
+        if (btn) {
+          btn.addEventListener("click", () => {
+            // After click, boxes can be toggled by script.js.
+            // This block only ensures they become visible when filled.
+            if (err && err.innerHTML && err.innerHTML.trim() !== "") {
+              err.style.display = "block";
+            }
+            if (ok && ok.innerHTML && ok.innerHTML.trim() !== "") {
+              ok.style.display = "block";
+            }
+          });
+        }
+
+        // Make sure script.js updates still show boxes
+        const observer = new MutationObserver(() => {
+          if (err && err.innerHTML && err.innerHTML.trim() !== "") {
+            err.style.display = "block";
+          }
+          if (ok && ok.innerHTML && ok.innerHTML.trim() !== "") {
+            ok.style.display = "block";
+          }
+        });
+        if (err) observer.observe(err, { childList: true, subtree: true });
+        if (ok) observer.observe(ok, { childList: true, subtree: true });
+      })();
+    </script>
+  </body>
+</html>
+

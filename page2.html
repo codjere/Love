@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Elii</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="2">
+    <div id="heartsLayer" class="hearts"></div>
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+    <main class="page">
+      <div class="container">
+        <div class="topNav">
+          <div class="badge" title="Elii">
+            <span class="heart" aria-hidden="true"></span> Kata Cinta · Elii
+          </div>
+          <div class="navLinks" aria-label="Navigasi halaman">
+            <a class="linkBtn" href="index.html">Kembali</a>
+          </div>
+        </div>
+
+        <section class="hero">
+          <div class="card wide">
+            <h1>Untuk Elii</h1>
+            <p>
+              Biar malam ini nggak cuma lewat… tapi jadi bukti kalau aku selalu
+              memilih kamu di setiap getar hati.
+            </p>
+
+            <div class="typeBox" style="margin-top:16px">
+              <div class="typeText">
+                <span id="typeText"></span><span class="cursor" aria-hidden="true"></span>
+              </div>
+              <p id="subtitleText" style="margin-top:10px"></p>
+            </div>
+
+            <div class="btnRow">
+              <button id="nextQuoteBtn" class="btn primary" type="button">
+                Kata berikutnya
+              </button>
+              <a class="btn" href="page3.html">
+                Lanjut ke kejutan cinta
+              </a>
+            </div>
+
+            <div class="hint" style="margin-top:14px">
+              <strong>Video spesial untuk Elii:</strong>
+              <div style="margin-top:10px;">
+                <video
+                  id="romanticVideo"
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  playsinline
+                  style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.12);"
+                >
+                  <source src="eli.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div style="margin-top:10px;">
+                <button id="playMusicBtn" class="btn" type="button">
+                  Nyalakan Suara Video
+                </button>
+              </div>
+              <div id="musicStatus" class="footerNote" style="margin-top:10px;">
+                Menyiapkan video romantis...
+              </div>
+            </div>
+
+            <div class="footerNote">
+              Klik tombol “Kata berikutnya” kalau kamu mau aku makin romantis.
+            </div>
+          </div>
+
+          <div class="card narrow">
+            <h2>Surat mini</h2>
+            <p>
+              Elii… aku ingin kamu tahu: ketika aku bilang “aku sayang”, itu
+              bukan kalimat manis doang. Itu cara aku menjaga—dengan sabar, dengan
+              hadir, dan dengan doa yang nggak pernah selesai.
+            </p>
+            <div class="hint">
+              <strong>Rahasia:</strong> kamu boleh coba “cari yang lebih
+              romantis” di kejutan selanjutnya.
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+

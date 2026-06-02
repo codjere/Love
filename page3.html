@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kejutan Cinta</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="3">
+    <div id="heartsLayer" class="hearts"></div>
+    <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+
+    <main class="page">
+      <div class="container">
+        <div class="topNav">
+          <div class="badge" title="Elii">
+            <span class="heart" aria-hidden="true"></span> Penuh Cinta
+          </div>
+          <div class="navLinks" aria-label="Navigasi halaman">
+            <a class="linkBtn" href="index.html">Awal</a>
+            <a class="linkBtn" href="page2.html">Kata Cinta</a>
+          </div>
+        </div>
+
+        <section class="hero">
+          <div class="card wide">
+            <h1>Kreasi Penuh Cinta</h1>
+            <p>
+              Elii… ini tempat di mana cintaku berubah jadi aksi. Klik hati ini,
+              dan saksikan “Love Meter”-ku bergerak karena kamu.
+            </p>
+
+            <div class="meterWrap">
+              <div class="meter" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                <i id="loveMeterBar"></i>
+              </div>
+              <div class="meterMeta">
+                <span>Love Meter</span>
+                <span id="meterValue">0%</span>
+              </div>
+            </div>
+
+            <div class="btnRow" style="margin-top:16px">
+              <button id="heartClickBtn" class="btn primary" type="button">
+                Klik Hati Ini 💗
+              </button>
+              <button
+                id="finalGlowBtn"
+                class="btn"
+                type="button"
+                disabled
+                title="Aktif setelah Love Meter penuh"
+              >
+                Romantis Mode: ON
+              </button>
+            </div>
+
+            <div id="clickMessage" class="hint" style="margin-top:16px">
+              Klik dulu ya…
+            </div>
+
+            <div class="hint" style="margin-top:14px">
+              <strong>Bonus cinta:</strong> setelah Love Meter penuh, aku
+              nyalain confetti spesial.
+            </div>
+          </div>
+
+          <div class="card narrow">
+            <h2>Tulis janji kecil</h2>
+            <p>
+              Nggak harus panjang. Yang penting terasa. Isi janji kamu lalu
+              simpan di hati aku (dan di layar ini).
+            </p>
+
+            <input
+              id="promiseInput"
+              class="input"
+              autocomplete="off"
+              placeholder="Misal: Aku akan selalu menjaga kamu..."
+            />
+            <div class="btnRow">
+              <button id="savePromiseBtn" class="btn ok" type="button">
+                Simpan Janji
+              </button>
+            </div>
+
+            <div id="promiseResult" class="hint" style="margin-top:14px">
+              Hasil janji akan muncul di sini.
+            </div>
+
+            <div class="footerNote">
+              Dibuat khusus dengan cinta untuk Elii.
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
